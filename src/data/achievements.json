@@ -1,0 +1,227 @@
+{
+  "beginner": [
+    {
+      "id": "first_morpheme",
+      "title": "First Morpheme",
+      "description": "Learn your first Extropian morpheme",
+      "icon": "🌱",
+      "xp_reward": 25,
+      "requirements": {
+        "morphemes_learned": 1
+      },
+      "category": "learning"
+    },
+    {
+      "id": "agent_master", 
+      "title": "Agent Master",
+      "description": "Master all agent morphemes (ka, mu, vi, tu)",
+      "icon": "👤",
+      "xp_reward": 100,
+      "requirements": {
+        "morphemes_mastered": ["ka", "mu", "vi", "tu"]
+      },
+      "category": "mastery"
+    },
+    {
+      "id": "first_loop",
+      "title": "Loop Initiate", 
+      "description": "Complete your first valid loop construction",
+      "icon": "🔄",
+      "xp_reward": 50,
+      "requirements": {
+        "loops_completed": 1
+      },
+      "category": "construction"
+    }
+  ],
+  "intermediate": [
+    {
+      "id": "entropy_aware",
+      "title": "Entropy Aware",
+      "description": "Understand and use entropy markers correctly", 
+      "icon": "⚡",
+      "xp_reward": 150,
+      "requirements": {
+        "entropy_exercises_completed": 5,
+        "morphemes_mastered": ["nyx"]
+      },
+      "category": "physics"
+    },
+    {
+      "id": "validation_expert",
+      "title": "Validation Expert", 
+      "description": "Master all validation morphemes",
+      "icon": "✅",
+      "xp_reward": 200,
+      "requirements": {
+        "morphemes_mastered": ["ver", "tok", "log"]
+      },
+      "category": "mastery"
+    },
+    {
+      "id": "uncertainty_navigator",
+      "title": "Uncertainty Navigator",
+      "description": "Use all uncertainty markers appropriately",
+      "icon": "🎯", 
+      "xp_reward": 175,
+      "requirements": {
+        "morphemes_mastered": ["xa", "zo", "qa", "wi"],
+        "uncertainty_exercises_completed": 10
+      },
+      "category": "precision"
+    }
+  ],
+  "advanced": [
+    {
+      "id": "extropian_philosopher",
+      "title": "Extropian Philosopher",
+      "description": "Master all extropian transformation morphemes",
+      "icon": "🚀",
+      "xp_reward": 300,
+      "requirements": {
+        "morphemes_mastered": ["evo", "aug", "opt", "tra"]
+      },
+      "category": "philosophy"
+    },
+    {
+      "id": "recursive_architect", 
+      "title": "Recursive Architect",
+      "description": "Successfully build nested loop structures",
+      "icon": "🏗️",
+      "xp_reward": 400,
+      "requirements": {
+        "recursive_challenges_completed": 3,
+        "max_nesting_depth": 3
+      },
+      "category": "complexity"
+    },
+    {
+      "id": "entropy_reducer",
+      "title": "Entropy Reducer",
+      "description": "Demonstrate consistent entropy reduction (nyx-) in constructions",
+      "icon": "📉",
+      "xp_reward": 350,
+      "requirements": {
+        "entropy_reductions_achieved": 25,
+        "total_xp_earned": 1000
+      },
+      "category": "physics"
+    }
+  ],
+  "expert": [
+    {
+      "id": "language_architect",
+      "title": "Language Architect", 
+      "description": "Create original Extropian expressions for complex scenarios",
+      "icon": "🧠",
+      "xp_reward": 500,
+      "requirements": {
+        "original_expressions_created": 10,
+        "story_challenges_completed": 5
+      },
+      "category": "creativity"
+    },
+    {
+      "id": "ecosystem_integrator",
+      "title": "Ecosystem Integrator",
+      "description": "Use Extropian language across multiple platforms (SignalFlow, HomeFlow, etc.)",
+      "icon": "🌐",
+      "xp_reward": 750,
+      "requirements": {
+        "platforms_integrated": 3,
+        "cross_platform_expressions": 20
+      },
+      "category": "integration"
+    },
+    {
+      "id": "truth_seeker",
+      "title": "Truth Seeker",
+      "description": "Achieve perfect loop closure rate with entropy reduction",
+      "icon": "💎",
+      "xp_reward": 1000,
+      "requirements": {
+        "loop_success_rate": 0.95,
+        "total_loops_completed": 100,
+        "entropy_reduction_ratio": 0.8
+      },
+      "category": "mastery"
+    }
+  ],
+  "legendary": [
+    {
+      "id": "extropian_master",
+      "title": "Extropian Master",
+      "description": "Complete mastery of the entire Extropian language system",
+      "icon": "👑",
+      "xp_reward": 2000,
+      "requirements": {
+        "all_morphemes_mastered": true,
+        "all_exercise_types_completed": true,
+        "total_xp_earned": 5000,
+        "teaching_others": 5
+      },
+      "category": "legendary"
+    },
+    {
+      "id": "reality_compiler",
+      "title": "Reality Compiler", 
+      "description": "Transform thoughts directly into executable truth claims",
+      "icon": "⚡👑",
+      "xp_reward": 3000,
+      "requirements": {
+        "executable_expressions_created": 50,
+        "real_world_implementations": 10,
+        "ecosystem_contributions": 25
+      },
+      "category": "legendary"
+    }
+  ],
+  "special": [
+    {
+      "id": "daily_learner",
+      "title": "Daily Learner",
+      "description": "Practice Extropian every day for a week",
+      "icon": "📅",
+      "xp_reward": 100,
+      "requirements": {
+        "consecutive_days": 7
+      },
+      "category": "consistency"
+    },
+    {
+      "id": "speed_demon",
+      "title": "Speed Demon", 
+      "description": "Complete 10 exercises in under 5 minutes",
+      "icon": "⚡",
+      "xp_reward": 200,
+      "requirements": {
+        "exercises_completed": 10,
+        "time_limit": 300
+      },
+      "category": "efficiency"
+    },
+    {
+      "id": "perfectionist",
+      "title": "Perfectionist",
+      "description": "Achieve 100% accuracy on 25 consecutive exercises",
+      "icon": "💯",
+      "xp_reward": 300,
+      "requirements": {
+        "consecutive_perfect_exercises": 25
+      },
+      "category": "precision"
+    },
+    {
+      "id": "community_builder",
+      "title": "Community Builder",
+      "description": "Help 10 other users learn Extropian",
+      "icon": "🤝",
+      "xp_reward": 400,
+      "requirements": {
+        "users_helped": 10,
+        "peer_validations_performed": 50
+      },
+      "category": "social"
+    }
+  ]
+}

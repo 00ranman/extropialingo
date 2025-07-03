@@ -1,0 +1,218 @@
+{
+  "pronunciation": [
+    {
+      "id": "p001",
+      "type": "pronunciation",
+      "difficulty": 1,
+      "morpheme": "ka",
+      "audio_url": "/audio/ka.mp3",
+      "instructions": "Listen and repeat the agent morpheme 'ka' (/ka/)",
+      "expected_pronunciation": "/ka/",
+      "xp_reward": 5
+    },
+    {
+      "id": "p002", 
+      "type": "pronunciation",
+      "difficulty": 1,
+      "morpheme": "sho",
+      "audio_url": "/audio/sho.mp3", 
+      "instructions": "Listen and repeat the initiation morpheme 'sho' (/ʃo/)",
+      "expected_pronunciation": "/ʃo/",
+      "xp_reward": 5
+    },
+    {
+      "id": "p003",
+      "type": "pronunciation",
+      "difficulty": 1,
+      "morpheme": "lim",
+      "audio_url": "/audio/lim.mp3",
+      "instructions": "Listen and repeat the closure morpheme 'lim' (/lim/)",
+      "expected_pronunciation": "/lim/",
+      "xp_reward": 5
+    }
+  ],
+  "morpheme_matching": [
+    {
+      "id": "m001",
+      "type": "morpheme_matching",
+      "difficulty": 1,
+      "question": "What does the morpheme 'ka' mean?",
+      "options": [
+        "I/first person agent",
+        "it/third person passive", 
+        "begin/start/initiate",
+        "close/end/complete"
+      ],
+      "correct_answer": 0,
+      "explanation": "'ka' is the first person agent morpheme, meaning 'I' - the primary actor or initiator in a statement.",
+      "xp_reward": 10
+    },
+    {
+      "id": "m002",
+      "type": "morpheme_matching", 
+      "difficulty": 1,
+      "question": "Which morpheme means 'begin/start/initiate'?",
+      "options": ["ka", "sho", "lim", "ver"],
+      "correct_answer": 1,
+      "explanation": "'sho' is the loop initiation morpheme that begins a new process or state.",
+      "xp_reward": 10
+    },
+    {
+      "id": "m003",
+      "type": "morpheme_matching",
+      "difficulty": 2,
+      "question": "What is the function of 'nyx' in Extropian?",
+      "options": [
+        "Voice/speech verification",
+        "Entropy marker/tracker",
+        "Logic verification", 
+        "Memory/recall"
+      ],
+      "correct_answer": 1,
+      "explanation": "'nyx' tracks entropy changes - the fundamental measure of order vs disorder in the system.",
+      "xp_reward": 15
+    }
+  ],
+  "loop_construction": [
+    {
+      "id": "l001",
+      "type": "loop_construction",
+      "difficulty": 1,
+      "instructions": "Build a basic loop: I initiate and close successfully",
+      "target_pattern": "AGENT-INITIATOR-CLOSURE",
+      "available_morphemes": ["ka", "mu", "sho", "lim", "ver"],
+      "correct_sequence": ["ka", "sho", "lim"],
+      "explanation": "ka-sho-lim: I (ka) initiate (sho) and close successfully (lim)",
+      "xp_reward": 20
+    },
+    {
+      "id": "l002", 
+      "type": "loop_construction",
+      "difficulty": 2,
+      "instructions": "Build a loop with verification: I initiate, verify, then close",
+      "target_pattern": "AGENT-INITIATOR-VALIDATION-CLOSURE",
+      "available_morphemes": ["ka", "mu", "sho", "lim", "ver", "tok"],
+      "correct_sequence": ["ka", "sho", "ver", "lim"],
+      "explanation": "ka-sho-ver-lim: I (ka) initiate (sho), verify (ver), then close (lim)",
+      "xp_reward": 30
+    },
+    {
+      "id": "l003",
+      "type": "loop_construction", 
+      "difficulty": 3,
+      "instructions": "Build an entropy-tracking loop: I begin entropy monitoring, verify, and close with effect",
+      "target_pattern": "AGENT-INITIATOR-ENTROPY-VALIDATION-CLOSURE-EFFECT",
+      "available_morphemes": ["ka", "sho", "nyx", "ver", "lim", "ek", "zur"],
+      "correct_sequence": ["ka", "sho", "nyx", "ver", "lim", "ek"],
+      "explanation": "ka-sho-nyx-ver-lim-ek: I (ka) initiate (sho) entropy monitoring (nyx), verify (ver), close (lim) with effect (ek)",
+      "xp_reward": 50
+    }
+  ],
+  "entropy_understanding": [
+    {
+      "id": "e001",
+      "type": "entropy_understanding",
+      "difficulty": 2,
+      "question": "What does 'nyx-' indicate?",
+      "options": [
+        "Entropy increase (disorder)",
+        "Entropy decrease (order creation)",
+        "Unknown entropy state",
+        "Critical entropy threshold"
+      ],
+      "correct_answer": 1,
+      "explanation": "'nyx-' indicates entropy decrease (ΔS < 0), meaning order is being created and XP should be minted.",
+      "xp_reward": 25
+    },
+    {
+      "id": "e002",
+      "type": "entropy_understanding",
+      "difficulty": 3, 
+      "question": "In the XP formula XP = ΔS / c_L², what happens when entropy decreases?",
+      "options": [
+        "XP becomes negative",
+        "XP becomes positive", 
+        "XP stays zero",
+        "XP becomes undefined"
+      ],
+      "correct_answer": 1,
+      "explanation": "When entropy decreases (ΔS < 0), the XP calculation yields positive XP rewards for creating order.",
+      "xp_reward": 30
+    }
+  ],
+  "uncertainty_practice": [
+    {
+      "id": "u001",
+      "type": "uncertainty_practice",
+      "difficulty": 3,
+      "instructions": "Add appropriate uncertainty markers to: ka-ver (I verify)",
+      "base_sequence": ["ka", "ver"],
+      "options": [
+        "ka-ver-xa (I verify provisionally)",
+        "ka-ver-zo (I verify with certainty)", 
+        "ka-ver-qa (I verify unknown)",
+        "ka-ver-wi (I verify experimentally)"
+      ],
+      "context": "You are 80% confident in your verification",
+      "correct_answer": 1,
+      "explanation": "With 80% confidence, use '-zo' for high certainty (0.8-1.0 range)",
+      "xp_reward": 35
+    }
+  ],
+  "complex_construction": [
+    {
+      "id": "c001",
+      "type": "complex_construction",
+      "difficulty": 4,
+      "instructions": "Build a self-transformation sequence using extropian morphemes",
+      "available_morphemes": ["ka", "sho", "evo", "aug", "opt", "tra", "lim", "zo"],
+      "target_meaning": "I begin evolution, then augment, optimize, transcend, and close with certainty",
+      "correct_sequence": ["ka", "sho", "evo", "aug", "opt", "tra", "lim", "zo"],
+      "explanation": "ka-sho-evo-aug-opt-tra-lim-zo: Complete extropian self-transformation cycle",
+      "xp_reward": 100
+    }
+  ],
+  "story_mode": [
+    {
+      "id": "s001",
+      "type": "story_mode",
+      "difficulty": 2,
+      "title": "The First Loop",
+      "scenario": "You are learning to use the Extropy system for the first time. Complete your first successful loop.",
+      "instructions": "Express: I focus my attention, begin a process, verify it works, and close successfully",
+      "available_morphemes": ["ka", "zen", "sho", "ver", "lim", "akt", "gud"],
+      "correct_sequence": ["ka", "zen", "sho", "ver", "lim"],
+      "narrative": "As you focus your mind (zen) and begin (sho) your first process, the verification (ver) confirms success. The satisfying closure (lim) marks your entry into the world of loop-based thinking.",
+      "xp_reward": 75
+    },
+    {
+      "id": "s002", 
+      "type": "story_mode",
+      "difficulty": 4,
+      "title": "The Entropy Crisis",
+      "scenario": "The system is showing dangerous entropy increase. You must take action to restore order.",
+      "instructions": "Express: I detect critical entropy increase, attempt to optimize, but must abort and try a different approach",
+      "available_morphemes": ["ka", "ver", "nyx!", "opt", "zur", "sho", "tra", "lim"],
+      "correct_sequence": ["ka", "ver", "nyx!", "opt", "zur", "sho", "tra", "lim"],
+      "narrative": "The critical entropy alarm (nyx!) demands immediate action. Your optimization attempt fails, forcing an abort (zur). But transcendence (tra) through a new approach saves the day.",
+      "xp_reward": 150
+    }
+  ],
+  "recursive_challenges": [
+    {
+      "id": "r001",
+      "type": "recursive_challenge", 
+      "difficulty": 5,
+      "instructions": "Build a nested loop structure with tik...tik closure",
+      "pattern": "ka-sho [nested: mu-sho-ver-lim] ka-lim",
+      "available_morphemes": ["ka", "mu", "sho", "lim", "ver", "tik", "rep"],
+      "correct_structure": {
+        "outer": ["ka", "sho"],
+        "nested": ["tik", "mu", "sho", "ver", "lim", "tik"],
+        "close": ["ka", "lim"]
+      },
+      "explanation": "Nested loops allow complex operations within larger processes while maintaining proper closure",
+      "xp_reward": 200
+    }
+  ]
+}

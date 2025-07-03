@@ -1,0 +1,318 @@
+{
+  "agents": {
+    "ka": {
+      "english": "I/first person agent",
+      "function": "Primary actor/initiator",
+      "category": "agent",
+      "difficulty": 1,
+      "pronunciation": "/ka/",
+      "examples": ["ka-sho (I initiate)", "ka-ver (I verify)", "ka-lim (I close)"],
+      "execution_mapping": "INIT_AGENT()",
+      "unlocked_by": null
+    },
+    "mu": {
+      "english": "it/third person passive",
+      "function": "Passive target/receiver",
+      "category": "agent",
+      "difficulty": 1,
+      "pronunciation": "/mu/",
+      "examples": ["mu-lim (it closes)", "mu-ver (it verifies)", "mu-rep (it repeats)"],
+      "execution_mapping": "SET_TARGET()",
+      "unlocked_by": "ka"
+    },
+    "vi": {
+      "english": "we/collective agent",
+      "function": "Collective/distributed action",
+      "category": "agent",
+      "difficulty": 2,
+      "pronunciation": "/vi/",
+      "examples": ["vi-rep (we repeat)", "vi-syn (we sync)", "vi-com (we combine)"],
+      "execution_mapping": "PARALLEL_EXEC()",
+      "unlocked_by": "mu"
+    },
+    "tu": {
+      "english": "you/second person",
+      "function": "Addressee/second person agent",
+      "category": "agent",
+      "difficulty": 2,
+      "pronunciation": "/tu/",
+      "examples": ["tu-ver (you verify)", "tu-sho (you begin)", "tu-lim (you close)"],
+      "execution_mapping": "ADDRESS_AGENT()",
+      "unlocked_by": "vi"
+    }
+  },
+  "loop_control": {
+    "sho": {
+      "english": "begin/start/initiate",
+      "function": "Initialize loop/begin state",
+      "category": "loop_control",
+      "difficulty": 1,
+      "pronunciation": "/ʃo/",
+      "examples": ["sho-nyx (begin entropy tracking)", "ka-sho (I begin)", "sho-ver (begin verify)"],
+      "execution_mapping": "ENTER_SCOPE()",
+      "unlocked_by": "ka"
+    },
+    "lim": {
+      "english": "close/end/complete",
+      "function": "Valid closure/success",
+      "category": "loop_control",
+      "difficulty": 1,
+      "pronunciation": "/lim/",
+      "examples": ["ver-lim (verify and close)", "ka-lim (I close)", "sho-lim (begin-close)"],
+      "execution_mapping": "VALIDATE_COMMIT()",
+      "unlocked_by": "sho"
+    },
+    "zur": {
+      "english": "abort/fail/cancel",
+      "function": "Invalid abort/failure",
+      "category": "loop_control",
+      "difficulty": 2,
+      "pronunciation": "/zur/",
+      "examples": ["err-zur (error abort)", "log-zur (logic fail)", "ka-zur (I abort)"],
+      "execution_mapping": "ROLLBACK_STATE()",
+      "unlocked_by": "lim"
+    },
+    "rep": {
+      "english": "repeat/iterate/cycle",
+      "function": "Repeat/iterate cycle",
+      "category": "loop_control",
+      "difficulty": 2,
+      "pronunciation": "/rep/",
+      "examples": ["cyc-rep (cycle repeat)", "ver-rep (verify repeat)", "ka-rep (I repeat)"],
+      "execution_mapping": "LOOP_CONTINUE()",
+      "unlocked_by": "zur"
+    }
+  },
+  "validation": {
+    "ver": {
+      "english": "verify/check/test",
+      "function": "Check/verify/test",
+      "category": "validation",
+      "difficulty": 1,
+      "pronunciation": "/ver/",
+      "examples": ["dat-ver (data verify)", "ka-ver (I verify)", "ver-lim (verify close)"],
+      "execution_mapping": "RUN_VALIDATION()",
+      "unlocked_by": "lim"
+    },
+    "tok": {
+      "english": "voice/speech/audio",
+      "function": "Voice/speech verification",
+      "category": "validation",
+      "difficulty": 3,
+      "pronunciation": "/tok/",
+      "examples": ["tok-ver (voice verify)", "tok-lim (speech close)", "ka-tok (I speak)"],
+      "execution_mapping": "PARSE_AUDIO()",
+      "unlocked_by": "ver"
+    },
+    "log": {
+      "english": "logic/reason/rational",
+      "function": "Logic verification",
+      "category": "validation",
+      "difficulty": 3,
+      "pronunciation": "/log/",
+      "examples": ["log-zur (logic fail)", "log-ver (logic verify)", "ka-log (I reason)"],
+      "execution_mapping": "CHECK_LOGIC()",
+      "unlocked_by": "tok"
+    }
+  },
+  "entropy": {
+    "nyx": {
+      "english": "entropy/disorder/chaos",
+      "function": "Entropy marker/tracker",
+      "category": "entropy",
+      "difficulty": 2,
+      "pronunciation": "/niks/",
+      "examples": ["nyx- (entropy decrease)", "nyx+ (entropy increase)", "nyx! (critical entropy)"],
+      "execution_mapping": "CALC_ENTROPY()",
+      "unlocked_by": "ver"
+    },
+    "vul": {
+      "english": "truth/reality/fact",
+      "function": "Reality/grounded truth",
+      "category": "entropy",
+      "difficulty": 2,
+      "pronunciation": "/vul/",
+      "examples": ["vul-lim (truth close)", "vul-ver (truth verify)", "ka-vul (I truth)"],
+      "execution_mapping": "ASSERT_FACT()",
+      "unlocked_by": "nyx"
+    },
+    "ek": {
+      "english": "effect/result/impact",
+      "function": "Impact/outcome/result",
+      "category": "entropy",
+      "difficulty": 2,
+      "pronunciation": "/ek/",
+      "examples": ["map-ek (transform effect)", "ka-ek (I effect)", "lim-ek (close effect)"],
+      "execution_mapping": "APPLY_EFFECT()",
+      "unlocked_by": "vul"
+    }
+  },
+  "cognitive": {
+    "zen": {
+      "english": "focus/attention/concentrate",
+      "function": "Mental focus/attention",
+      "category": "cognitive",
+      "difficulty": 3,
+      "pronunciation": "/zen/",
+      "examples": ["zen-sho (focus initiate)", "ka-zen (I focus)", "zen-ver (focus verify)"],
+      "execution_mapping": "SET_FOCUS()",
+      "unlocked_by": "ek"
+    },
+    "mor": {
+      "english": "memory/recall/remember",
+      "function": "Memory/recall",
+      "category": "cognitive",
+      "difficulty": 3,
+      "pronunciation": "/mor/",
+      "examples": ["mor-ver (memory check)", "ka-mor (I remember)", "mor-ret (memory retrieve)"],
+      "execution_mapping": "ACCESS_MEMORY()",
+      "unlocked_by": "zen"
+    },
+    "kol": {
+      "english": "knowledge/data/information",
+      "function": "Knowledge/data",
+      "category": "cognitive",
+      "difficulty": 3,
+      "pronunciation": "/kol/",
+      "examples": ["kol-nyx (knowledge entropy)", "ka-kol (I know)", "kol-ver (knowledge verify)"],
+      "execution_mapping": "QUERY_KNOWLEDGE()",
+      "unlocked_by": "mor"
+    },
+    "int": {
+      "english": "understand/comprehend/grasp",
+      "function": "Understanding/comprehension",
+      "category": "cognitive",
+      "difficulty": 4,
+      "pronunciation": "/int/",
+      "examples": ["int-ver (understand verify)", "ka-int (I understand)", "int-lim (understand complete)"],
+      "execution_mapping": "COMPREHEND()",
+      "unlocked_by": "kol"
+    }
+  },
+  "extropian": {
+    "evo": {
+      "english": "evolve/upgrade/develop",
+      "function": "Evolution/upgrade",
+      "category": "extropian",
+      "difficulty": 4,
+      "pronunciation": "/evo/",
+      "examples": ["evo-lim (evolution complete)", "ka-evo (I evolve)", "evo-aug (evolve augment)"],
+      "execution_mapping": "EVOLVE_STATE()",
+      "unlocked_by": "int"
+    },
+    "aug": {
+      "english": "augment/enhance/improve",
+      "function": "Augmentation/enhancement",
+      "category": "extropian",
+      "difficulty": 4,
+      "pronunciation": "/aug/",
+      "examples": ["aug-ver (augment verify)", "ka-aug (I augment)", "aug-opt (augment optimize)"],
+      "execution_mapping": "ENHANCE()",
+      "unlocked_by": "evo"
+    },
+    "opt": {
+      "english": "optimize/perfect/refine",
+      "function": "Optimization/improvement",
+      "category": "extropian",
+      "difficulty": 4,
+      "pronunciation": "/opt/",
+      "examples": ["opt-nyx (optimize entropy)", "ka-opt (I optimize)", "opt-tra (optimize transcend)"],
+      "execution_mapping": "OPTIMIZE()",
+      "unlocked_by": "aug"
+    },
+    "tra": {
+      "english": "transcend/surpass/exceed",
+      "function": "Transcendence/breakthrough",
+      "category": "extropian",
+      "difficulty": 5,
+      "pronunciation": "/tra/",
+      "examples": ["tra-ek (transcend effect)", "ka-tra (I transcend)", "tra-lim (transcend complete)"],
+      "execution_mapping": "TRANSCEND()",
+      "unlocked_by": "opt"
+    }
+  },
+  "uncertainty_markers": {
+    "xa": {
+      "english": "provisional/tentative/maybe",
+      "function": "Provisional certainty (0.3-0.6)",
+      "category": "uncertainty",
+      "difficulty": 3,
+      "pronunciation": "/ksa/",
+      "examples": ["ver-xa (verify provisionally)", "ka-sho-xa (I begin tentatively)"],
+      "xp_modifier": 0.5,
+      "unlocked_by": "nyx"
+    },
+    "zo": {
+      "english": "certain/definite/sure",
+      "function": "High certainty (0.8-1.0)",
+      "category": "uncertainty",
+      "difficulty": 2,
+      "pronunciation": "/zo/",
+      "examples": ["lim-zo (close with certainty)", "ka-ver-zo (I verify certainly)"],
+      "xp_modifier": 1.0,
+      "unlocked_by": "xa"
+    },
+    "qa": {
+      "english": "unknown/unclear/mystery",
+      "function": "Unknown certainty (0.0-0.3)",
+      "category": "uncertainty",
+      "difficulty": 4,
+      "pronunciation": "/qa/",
+      "examples": ["dat-qa (data unknown)", "ka-kol-qa (I know unknown)"],
+      "xp_modifier": 1.5,
+      "unlocked_by": "zo"
+    },
+    "wi": {
+      "english": "experimental/novel/test",
+      "function": "Experimental state",
+      "category": "uncertainty",
+      "difficulty": 5,
+      "pronunciation": "/wi/",
+      "examples": ["sim-wi (experimental simulation)", "ka-evo-wi (I evolve experimentally)"],
+      "xp_modifier": 2.0,
+      "unlocked_by": "qa"
+    }
+  },
+  "entropy_operators": {
+    "nyx+": {
+      "english": "entropy increase",
+      "function": "Indicates increasing disorder (ΔS > 0)",
+      "category": "entropy_operator",
+      "difficulty": 3,
+      "pronunciation": "/niks plus/",
+      "examples": ["nyx+ detected", "system showing nyx+"],
+      "xp_impact": "negative",
+      "unlocked_by": "nyx"
+    },
+    "nyx-": {
+      "english": "entropy decrease",
+      "function": "Indicates increasing order (ΔS < 0)",
+      "category": "entropy_operator", 
+      "difficulty": 3,
+      "pronunciation": "/niks minus/",
+      "examples": ["nyx- achieved", "successful nyx- process"],
+      "xp_impact": "positive",
+      "unlocked_by": "nyx+"
+    },
+    "nyx!": {
+      "english": "critical entropy",
+      "function": "Critical state change (|ΔS| > 0.8)",
+      "category": "entropy_operator",
+      "difficulty": 4,
+      "pronunciation": "/niks exclamation/",
+      "examples": ["nyx! threshold reached", "critical nyx! event"],
+      "xp_impact": "major",
+      "unlocked_by": "nyx-"
+    },
+    "nyx?": {
+      "english": "entropy unknown",
+      "function": "Entropy state unclear - calculation required",
+      "category": "entropy_operator",
+      "difficulty": 4,
+      "pronunciation": "/niks question/",
+      "examples": ["nyx? needs calculation", "pending nyx? analysis"],
+      "xp_impact": "pending",
+      "unlocked_by": "nyx!"
+    }
+  }
+}

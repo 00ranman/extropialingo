@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Extropian morpheme styling */
+.morpheme {
+  @apply font-extropian text-extropy-400 font-semibold tracking-wide;
+}
+
+.morpheme-card {
+  @apply bg-gray-800 border border-extropy-600 rounded-lg p-4 hover:border-extropy-400 transition-colors;
+}
+
+.xp-gain {
+  @apply text-xp-400 font-bold animate-xp-gain;
+}
+
+.entropy-indicator {
+  @apply inline-flex items-center space-x-1;
+}
+
+.entropy-positive {
+  @apply text-xp-400;
+}
+
+.entropy-negative {
+  @apply text-entropy-400;
+}
+
+.entropy-critical {
+  @apply text-red-400 animate-pulse;
+}
+
+.loop-structure {
+  @apply flex items-center space-x-2 p-3 bg-gray-900 rounded-lg border border-gray-700;
+}
+
+.loop-valid {
+  @apply border-xp-500 bg-xp-900/20;
+}
+
+.loop-invalid {
+  @apply border-entropy-500 bg-entropy-900/20;
+}
+
+/* Achievement styling */
+.achievement-badge {
+  @apply relative inline-flex items-center justify-center w-16 h-16 rounded-full border-2 text-2xl;
+}
+
+.achievement-unlocked {
+  @apply border-xp-400 bg-xp-900/30 animate-morpheme-unlock;
+}
+
+.achievement-locked {
+  @apply border-gray-600 bg-gray-800/30 opacity-50;
+}
+
+/* Progress indicators */
+.progress-bar {
+  @apply w-full bg-gray-700 rounded-full h-2.5;
+}
+
+.progress-fill {
+  @apply bg-gradient-to-r from-extropy-500 to-xp-400 h-2.5 rounded-full transition-all duration-300;
+}
+
+/* Pronunciation feedback */
+.pronunciation-correct {
+  @apply text-xp-400 bg-xp-900/20 border border-xp-500;
+}
+
+.pronunciation-incorrect {
+  @apply text-entropy-400 bg-entropy-900/20 border border-entropy-500;
+}
+
+/* Interactive elements */
+.morpheme-draggable {
+  @apply cursor-move bg-extropy-800 border border-extropy-600 rounded px-3 py-2 morpheme hover:border-extropy-400 transition-colors select-none;
+}
+
+.morpheme-draggable:hover {
+  @apply transform scale-105;
+}
+
+.drop-zone {
+  @apply border-2 border-dashed border-gray-600 rounded-lg p-4 min-h-16 flex items-center justify-center transition-colors;
+}
+
+.drop-zone-active {
+  @apply border-extropy-400 bg-extropy-900/20;
+}
+
+.drop-zone-valid {
+  @apply border-xp-400 bg-xp-900/20;
+}
+
+.drop-zone-invalid {
+  @apply border-entropy-400 bg-entropy-900/20;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-extropy-600 hover:bg-extropy-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
+}
+
+.btn-success {
+  @apply bg-xp-600 hover:bg-xp-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
+}
+
+.btn-warning {
+  @apply bg-entropy-600 hover:bg-entropy-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
+}
+
+/* Learning mode specific styles */
+.exercise-container {
+  @apply max-w-4xl mx-auto p-6 space-y-6;
+}
+
+.exercise-card {
+  @apply bg-gray-800 rounded-xl p-6 border border-gray-700;
+}
+
+.exercise-header {
+  @apply flex items-center justify-between mb-4;
+}
+
+.difficulty-indicator {
+  @apply flex space-x-1;
+}
+
+.difficulty-star {
+  @apply w-4 h-4;
+}
+
+.difficulty-star-filled {
+  @apply text-entropy-400;
+}
+
+.difficulty-star-empty {
+  @apply text-gray-600;
+}
+
+/* Gamification elements */
+.xp-counter {
+  @apply flex items-center space-x-2 bg-xp-900/30 border border-xp-600 rounded-lg px-3 py-2;
+}
+
+.streak-counter {
+  @apply flex items-center space-x-2 bg-entropy-900/30 border border-entropy-600 rounded-lg px-3 py-2;
+}
+
+.level-indicator {
+  @apply relative inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-extropy-500 to-xp-500 text-white font-bold text-lg;
+}
+
+/* Custom animations */
+@keyframes xp-gain {
+  0% { opacity: 0; transform: translateY(10px) scale(0.8); }
+  50% { opacity: 1; transform: translateY(-20px) scale(1.1); }
+  100% { opacity: 0; transform: translateY(-40px) scale(1); }
+}
+
+@keyframes morpheme-unlock {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.animate-xp-gain {
+  animation: xp-gain 2s ease-out forwards;
+}
+
+.animate-morpheme-unlock {
+  animation: morpheme-unlock 0.6s ease-out;
+}
+
+/* Responsive design helpers */
+@media (max-width: 768px) {
+  .morpheme-draggable {
+    @apply text-sm px-2 py-1;
+  }
+  
+  .exercise-container {
+    @apply p-4 space-y-4;
+  }
+  
+  .exercise-card {
+    @apply p-4;
+  }
+}
