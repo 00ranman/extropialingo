@@ -6,6 +6,13 @@ Revolutionary gamified Extropian language learning application with physics-base
 ![Physics Engine](https://img.shields.io/badge/Physics-XP%20%3D%20%CE%94S%20%2F%20c_L%C2%B2-blue)
 ![Domain Restricted](https://img.shields.io/badge/Auth-%40xpengine.org-orange)
 
+## Ecosystem Integration
+
+> **Ecosystem Note:** This is the standalone Next.js frontend. It is also available in the [extropy-engine](https://github.com/00ranman/extropy-engine) monorepo at `frontends/extropialingo` (port 3007). API wiring to monorepo backend services is pending.
+>
+> See [ECOSYSTEM_MAP.md](https://github.com/00ranman/extropy-engine/blob/main/ECOSYSTEM_MAP.md) for the full repository mapping.
+
+
 ## 🌟 Revolutionary Features
 
 ### 🎯 Core Learning System
